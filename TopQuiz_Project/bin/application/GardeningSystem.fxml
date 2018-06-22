@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="300" prefWidth="700" styleClass="root" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GardernController">
+   <children>
+      <Button layoutX="44.0" layoutY="-159.0" mnemonicParsing="false" text="Button" />
+      <TabPane layoutY="91.0" prefHeight="553.0" prefWidth="927.0" styleClass="background" stylesheets="@application.css" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+            <Tab text="Plants">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="671.0" prefWidth="968.0">
+                     <children>
+                        <Label layoutX="30.0" layoutY="65.0" text="Plant 1 Type:" />
+                        <ComboBox fx:id="cmbPlant1" layoutX="149.0" layoutY="65.0" onAction="#changePlant1" prefHeight="25.0" prefWidth="178.0" promptText="Select Plant Type (NW) ">
+                           <cursor>
+                              <Cursor fx:constant="CROSSHAIR" />
+                           </cursor></ComboBox>
+                        <Label layoutX="29.0" layoutY="122.0" text="Plant 2 Type:" />
+                        <Label layoutX="29.0" layoutY="180.0" text="Plant 3 Type:" />
+                        <Label layoutX="29.0" layoutY="237.0" text="Plant 4 Type:" />
+                        <ComboBox fx:id="cmbPlant2" layoutX="149.0" layoutY="122.0" onAction="#changePlant2" prefHeight="25.0" prefWidth="179.0" promptText="Select Plant Type (NE)" />
+                        <ComboBox fx:id="cmbPlant3" layoutX="151.0" layoutY="180.0" onAction="#changePlant3" prefHeight="25.0" prefWidth="179.0" promptText="Select Plant Type (SW)" />
+                        <ComboBox fx:id="cmbPlant4" layoutX="149.0" layoutY="237.0" onAction="#changePlant4" prefHeight="25.0" prefWidth="182.0" promptText="Select Plant Type (SE)" />
+                        <Button layoutX="131.0" layoutY="315.0" mnemonicParsing="false" onAction="#savePlantsClick" prefHeight="25.0" prefWidth="123.0" text="Save" />
+                        <ImageView fx:id="img1" fitHeight="144.0" fitWidth="173.0" layoutX="561.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/grass.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="img2" fitHeight="132.0" fitWidth="173.0" layoutX="734.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/grass.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="452.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="img3" fitHeight="133.0" fitWidth="173.0" layoutX="561.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/grass.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="img4" fitHeight="135.0" fitWidth="173.0" layoutX="734.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/grass.png" />
+                           </image>
+                        </ImageView>
+                        <TextField fx:id="plantName1" layoutX="339.0" layoutY="65.0" promptText="Plant 1 Name" />
+                        <TextField fx:id="plantName2" layoutX="339.0" layoutY="122.0" promptText="Plant 2 Name" />
+                        <TextField fx:id="plantName3" layoutX="339.0" layoutY="180.0" promptText="Plant 3 Name" />
+                        <TextField fx:id="plantName4" layoutX="339.0" layoutY="237.0" promptText="Plant 4 Name" />
+                        <TextArea fx:id="plantLog" editable="false" layoutX="14.0" layoutY="378.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="132.0" prefWidth="905.0" wrapText="true" />
+                        <Label layoutX="581.0" layoutY="14.0" prefHeight="40.0" prefWidth="332.0" text="This is your garden! Divided into four parts!" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Sprinklers">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="635.0" prefWidth="934.0">
+                     <children>
+                        <Label layoutX="51.0" layoutY="55.0" text="Select Sprinkler By Position:" />
+                        <ComboBox fx:id="cmbSprinklerPosition" layoutX="265.0" layoutY="55.0" prefHeight="25.0" prefWidth="169.0" promptText="Select Sprinkler" />
+                        <Label layoutX="51.0" layoutY="106.0" text="Select Day:" />
+                        <Label layoutX="51.0" layoutY="156.0" text="Select Time Slot:" />
+                        <ComboBox fx:id="cmbdays" layoutX="265.0" layoutY="106.0" prefWidth="150.0" promptText="Day" />
+                        <ComboBox fx:id="cmbHourDuration" layoutX="265.0" layoutY="156.0" prefWidth="150.0" promptText="1 Hour Interval" />
+                        <Button layoutX="171.0" layoutY="228.0" mnemonicParsing="false" onAction="#saveSprinklerClick" prefHeight="25.0" prefWidth="108.0" text="Save" />
+                        <Label fx:id="plant1Sprinkler" layoutX="109.0" layoutY="290.0" prefHeight="17.0" prefWidth="69.0" />
+                        <Label fx:id="plant2Sprinkler" layoutX="311.0" layoutY="290.0" prefHeight="17.0" prefWidth="91.0" />
+                        <Label fx:id="plant3Sprinkler" layoutX="535.0" layoutY="290.0" prefHeight="17.0" prefWidth="80.0" />
+                        <Label fx:id="plant4Sprinkler" layoutX="758.0" layoutY="290.0" prefHeight="17.0" prefWidth="65.0" />
+                        <TextArea fx:id="sprinklerTimeLog" layoutX="24.0" layoutY="276.0" prefHeight="242.0" prefWidth="887.0" wrapText="true" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Temprature">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="57.0" layoutY="108.0" text="Highest Temprature:" />
+                        <Label layoutX="59.0" layoutY="157.0" text="Lowest Temprature:" />
+                        <TextField fx:id="highestTemp" layoutX="235.0" layoutY="102.0" />
+                        <TextField fx:id="lowestTemp" layoutX="235.0" layoutY="151.0" />
+                        <Button layoutX="178.0" layoutY="239.0" mnemonicParsing="false" onAction="#saveTemprature" prefHeight="25.0" prefWidth="135.0" text="Save" />
+                        <TextArea fx:id="tempLog" layoutX="26.0" layoutY="301.0" prefHeight="200.0" prefWidth="857.0" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Fertilization">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="60.0" layoutY="39.0" text="Select Plant:" />
+                        <Label layoutX="54.0" layoutY="101.0" text="Select Time Period:" />
+                        <Label layoutX="60.0" layoutY="161.0" text="Type of fertilizer:" />
+                        <ComboBox fx:id="cmbInsects" layoutX="196.0" layoutY="35.0" prefHeight="25.0" prefWidth="203.0" promptText="Select Plant" />
+                        <ComboBox fx:id="cmbFertilizationPeriod" layoutX="196.0" layoutY="97.0" prefHeight="25.0" prefWidth="202.0" promptText="Select period for fertilization" />
+                        <ComboBox fx:id="cmbFertilizationType" layoutX="196.0" layoutY="157.0" prefWidth="150.0" promptText="Select Fertilizer" />
+                        <Button layoutX="161.0" layoutY="236.0" mnemonicParsing="false" onAction="#SaveFertilizer" text="Save Fertilization Detail" />
+                        <TextArea fx:id="fertilizerLog" layoutX="37.0" layoutY="300.0" prefHeight="200.0" prefWidth="871.0" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Sprinkler Control">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextArea fx:id="sprinklerLog" layoutX="32.0" layoutY="61.0" prefHeight="475.0" prefWidth="887.0" wrapText="true" />
+                        <Label layoutX="420.0" layoutY="36.0" text="Sprinkler Log" />
+                        <Label layoutX="668.0" layoutY="276.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Temprature Control ">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextArea fx:id="tempratureControlLog" layoutX="27.0" layoutY="78.0" prefHeight="423.0" prefWidth="876.0" />
+                        <Label layoutX="374.0" layoutY="36.0" text="Heater And GreenHouse " />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Sensor's Input">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox fx:id="isRaining" layoutX="174.0" layoutY="50.0" mnemonicParsing="false" styleClass="label" text="Check If yes! ( Here Sensors are not available! )" />
+                        <CheckBox fx:id="isFertilizationTime" layoutX="174.0" layoutY="99.0" mnemonicParsing="false" styleClass="label" text="Check if yes! ( Here Sensors are not available!)" />
+                        <Label layoutX="27.0" layoutY="50.0" text="Raining?" />
+                        <Label layoutX="27.0" layoutY="99.0" text="Less Fertilizers?" />
+                        <Label layoutX="27.0" layoutY="162.0" text="Outside Temprature" />
+                        <TextField fx:id="sensorTemp" layoutX="187.0" layoutY="156.0" promptText="Sensing Temprature" />
+                        <Button layoutX="121.0" layoutY="221.0" mnemonicParsing="false" onAction="#saveSensorData" prefHeight="25.0" prefWidth="157.0" text="Save" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Label alignment="CENTER" layoutX="342.0" layoutY="26.0" text="Automated Gardening System" textAlignment="JUSTIFY" textFill="#26b21cd9" textOverrun="WORD_ELLIPSIS">
+         <font>
+            <Font name="Bell MT" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="678.0" layoutY="26.0" text="Time:" textFill="#eb0f0f">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="777.0" layoutY="24.0" textFill="#d30e0e">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label fx:id="dateTime" layoutX="726.0" layoutY="25.0" prefHeight="27.0" prefWidth="196.0" />
+   </children>
+</AnchorPane>

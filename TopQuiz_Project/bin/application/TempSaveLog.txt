@@ -1,0 +1,1 @@
+You have saved temprature data to allow highest temprature:23 and Lowest Temprature is:19.
